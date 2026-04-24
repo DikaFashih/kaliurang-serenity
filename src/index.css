@@ -140,7 +140,7 @@
     @apply relative overflow-hidden;
   }
   .img-cinematic img {
-    @apply transition-transform duration-[1600ms] ease-out;
+    transition: transform 1.6s var(--ease-cinema);
   }
   .img-cinematic:hover img {
     transform: scale(1.04);
