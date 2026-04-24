@@ -52,25 +52,25 @@ export const Booking = () => {
       {/* Image side */}
       <div className="absolute inset-0 lg:left-1/2">
         <img src={villaPool} alt="Villa Van Resink at golden hour" loading="lazy" width={1080} height={1600} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-charcoal/30 lg:bg-transparent" />
+        <div className="absolute inset-0 bg-charcoal/55 lg:bg-transparent" />
       </div>
 
       <div className="relative grid lg:grid-cols-2">
-        <div className="bg-cream py-24 md:py-32 px-6 md:px-16 lg:px-24">
+        <div className="bg-cream/95 lg:bg-cream backdrop-blur-sm py-20 md:py-28 lg:py-32 fluid-gutter-x lg:px-24">
           <p data-reveal className="reveal eyebrow mb-6 flex items-center gap-4">
             <span className="editorial-rule" /> Reservations
           </p>
-          <h2 data-reveal className="reveal font-display text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-forest-deep text-balance">
+          <h2 data-reveal className="reveal font-display fluid-display-lg text-forest-deep text-balance">
             Begin your <em className="italic font-light text-terracotta">Kaliurang</em> escape.
           </h2>
-          <p data-reveal className="reveal mt-8 text-foreground/70 font-light leading-relaxed max-w-md text-pretty">
+          <p data-reveal className="reveal mt-6 md:mt-8 text-foreground/70 font-light leading-relaxed max-w-md text-pretty">
             Reservations are personal. Choose your preferred online travel
             platform, or write to us directly on WhatsApp for a quiet,
             tailored welcome.
           </p>
 
           {/* Online booking platforms */}
-          <div data-reveal className="reveal mt-14 max-w-md">
+          <div data-reveal className="reveal mt-12 md:mt-14 max-w-md">
             <p className="eyebrow mb-5 flex items-center gap-4">
               <span className="editorial-rule" /> Book Online
             </p>
@@ -104,7 +104,7 @@ export const Booking = () => {
           </div>
 
           {/* WhatsApp direct */}
-          <div data-reveal className="reveal mt-14 max-w-md">
+          <div data-reveal className="reveal mt-12 md:mt-14 max-w-md">
             <p className="eyebrow mb-5 flex items-center gap-4">
               <span className="editorial-rule" /> Reserve Directly via WhatsApp
             </p>
