@@ -27,18 +27,18 @@ export const Navigation = () => {
           : "bg-transparent py-7"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-6 lg:px-12">
+      <div className="container mx-auto flex items-center justify-between px-5 sm:px-6 lg:px-12">
         <a href="#top" className={`flex flex-col leading-none transition-colors ${scrolled ? "text-charcoal" : "text-cream"}`}>
-          <span className="font-display text-xl md:text-2xl tracking-wide">Villa Van Resink</span>
+          <span className="font-display text-lg sm:text-xl md:text-2xl tracking-wide">Villa Van Resink</span>
           <span className="eyebrow mt-1 text-[0.55rem] opacity-80">Kaliurang · Est. 1928</span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-10">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className={`text-xs uppercase tracking-[0.24em] font-light transition-colors hover:opacity-70 ${
+              className={`text-[0.65rem] lg:text-xs uppercase tracking-[0.22em] lg:tracking-[0.24em] font-light transition-colors hover:opacity-70 ${
                 scrolled ? "text-charcoal" : "text-cream/90"
               }`}
             >
@@ -49,7 +49,7 @@ export const Navigation = () => {
 
         <a
           href="#booking"
-          className={`hidden lg:inline-flex items-center gap-3 text-xs uppercase tracking-[0.24em] font-light border px-5 py-2.5 transition-all duration-500 ${
+          className={`hidden md:inline-flex items-center gap-2 lg:gap-3 text-[0.65rem] lg:text-xs uppercase tracking-[0.22em] lg:tracking-[0.24em] font-light border px-4 lg:px-5 py-2 lg:py-2.5 transition-all duration-500 ${
             scrolled
               ? "border-forest text-forest hover:bg-forest hover:text-cream"
               : "border-cream/60 text-cream hover:bg-cream hover:text-charcoal"
@@ -60,7 +60,7 @@ export const Navigation = () => {
 
         <button
           onClick={() => setOpen(!open)}
-          className={`lg:hidden flex flex-col gap-1.5 ${scrolled ? "text-charcoal" : "text-cream"}`}
+          className={`md:hidden flex flex-col gap-1.5 ${scrolled ? "text-charcoal" : "text-cream"}`}
           aria-label="Menu"
         >
           <span className={`block w-6 h-px bg-current transition-transform ${open ? "translate-y-2 rotate-45" : ""}`} />
@@ -71,17 +71,17 @@ export const Navigation = () => {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-0 bg-forest-deep transition-all duration-700 ${
+        className={`md:hidden fixed inset-0 top-0 bg-forest-deep transition-all duration-700 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 px-8">
+        <div className="flex flex-col items-center justify-center h-full gap-7 px-8">
           {navItems.map((item, i) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="font-display text-cream text-3xl"
+              className="font-display text-cream text-[2rem] sm:text-3xl"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               {item.label}
