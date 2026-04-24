@@ -1,96 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Villa Van Resink — Heritage Tropical Mountain Retreat
+   Editorial luxury design system. All colors HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Earthy heritage palette */
+    --background: 38 28% 94%;              /* warm cream */
+    --foreground: 80 8% 14%;               /* deep charcoal-olive */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --cream: 38 32% 92%;
+    --cream-soft: 36 26% 88%;
+    --fog: 40 15% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --forest: 130 18% 22%;                 /* deep forest green */
+    --forest-deep: 135 22% 14%;
+    --olive: 75 16% 32%;                   /* deep olive */
+    --moss: 90 12% 38%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --stone: 30 8% 58%;                    /* stone gray */
+    --stone-light: 30 10% 78%;
+    --charcoal: 30 6% 18%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --wood: 22 28% 28%;                    /* aged wood brown */
+    --wood-light: 28 30% 42%;
+    --terracotta: 18 38% 48%;              /* muted terracotta */
+    --terracotta-soft: 22 32% 62%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --gold: 38 42% 52%;                    /* aged brass accent */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Shadcn semantic mapping */
+    --card: 38 30% 96%;
+    --card-foreground: 80 8% 14%;
+    --popover: 38 30% 96%;
+    --popover-foreground: 80 8% 14%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --primary: 130 18% 22%;
+    --primary-foreground: 38 32% 94%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --secondary: 36 22% 86%;
+    --secondary-foreground: 80 10% 18%;
 
-    --radius: 0.5rem;
+    --muted: 36 18% 88%;
+    --muted-foreground: 80 6% 38%;
 
-    --sidebar-background: 0 0% 98%;
+    --accent: 18 38% 48%;
+    --accent-foreground: 38 32% 94%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 38 32% 94%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --border: 36 14% 80%;
+    --input: 36 14% 80%;
+    --ring: 130 18% 22%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --radius: 0.125rem;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Gradients & atmospheres */
+    --grad-fog: linear-gradient(180deg, hsl(var(--fog) / 0) 0%, hsl(var(--fog) / 0.7) 100%);
+    --grad-vignette: radial-gradient(ellipse at center, transparent 40%, hsl(var(--charcoal) / 0.55) 100%);
+    --grad-hero-overlay: linear-gradient(180deg, hsl(var(--charcoal) / 0.25) 0%, hsl(var(--charcoal) / 0.15) 35%, hsl(var(--charcoal) / 0.65) 100%);
+    --grad-warm: linear-gradient(135deg, hsl(var(--cream)) 0%, hsl(var(--cream-soft)) 100%);
+    --grad-forest: linear-gradient(180deg, hsl(var(--forest)) 0%, hsl(var(--forest-deep)) 100%);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 30px 60px -30px hsl(var(--charcoal) / 0.25);
+    --shadow-editorial: 0 40px 80px -40px hsl(var(--forest-deep) / 0.4);
 
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Motion */
+    --ease-cinema: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-slow: cubic-bezier(0.65, 0, 0.35, 1);
   }
 }
 
@@ -99,7 +83,99 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  ::selection {
+    background: hsl(var(--forest));
+    color: hsl(var(--cream));
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    @apply text-[0.7rem] uppercase tracking-[0.32em] text-muted-foreground font-light;
+  }
+
+  .editorial-rule {
+    @apply inline-block w-12 h-px bg-current opacity-40;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.4s var(--ease-cinema), transform 1.4s var(--ease-cinema);
+    will-change: opacity, transform;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-blur {
+    opacity: 0;
+    filter: blur(14px);
+    transform: scale(1.02);
+    transition: opacity 1.6s var(--ease-cinema), filter 1.6s var(--ease-cinema), transform 1.6s var(--ease-cinema);
+  }
+  .reveal-blur.in {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  .img-cinematic {
+    @apply relative overflow-hidden;
+  }
+  .img-cinematic img {
+    transition: transform 1.6s var(--ease-cinema);
+  }
+  .img-cinematic:hover img {
+    transform: scale(1.04);
+  }
+
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  @keyframes drift-fog {
+    0%, 100% { transform: translateX(-2%) translateY(0); opacity: 0.4; }
+    50% { transform: translateX(2%) translateY(-1%); opacity: 0.65; }
+  }
+  .animate-fog { animation: drift-fog 18s ease-in-out infinite; }
+
+  @keyframes slow-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+  }
+  .animate-slow-zoom { animation: slow-zoom 18s ease-out forwards; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 40s linear infinite; }
 }

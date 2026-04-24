@@ -1,0 +1,103 @@
+import { useReveal } from "@/hooks/use-reveal";
+import { useState } from "react";
+import villaPool from "@/assets/villa-pool.jpg";
+
+export const Booking = () => {
+  const ref = useReveal();
+  const [form, setForm] = useState({ name: "", dates: "", guests: "2", message: "" });
+
+  const whatsappLink = () => {
+    const text = encodeURIComponent(
+      `Halo Villa Van Resink,\n\nSaya ${form.name || "[name]"} ingin reservasi.\nTanggal: ${form.dates || "[dates]"}\nTamu: ${form.guests}\nCatatan: ${form.message || "—"}`
+    );
+    return `https://wa.me/6281234567890?text=${text}`;
+  };
+
+  return (
+    <section id="booking" ref={ref} className="relative overflow-hidden">
+      {/* Image side */}
+      <div className="absolute inset-0 lg:left-1/2">
+        <img src={villaPool} alt="Villa Van Resink at golden hour" loading="lazy" width={1080} height={1600} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-charcoal/30 lg:bg-transparent" />
+      </div>
+
+      <div className="relative grid lg:grid-cols-2">
+        <div className="bg-cream py-24 md:py-32 px-6 md:px-16 lg:px-24">
+          <p data-reveal className="reveal eyebrow mb-6 flex items-center gap-4">
+            <span className="editorial-rule" /> Reservations
+          </p>
+          <h2 data-reveal className="reveal font-display text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-forest-deep text-balance">
+            Begin your <em className="italic font-light text-terracotta">Kaliurang</em> escape.
+          </h2>
+          <p data-reveal className="reveal mt-8 text-foreground/70 font-light leading-relaxed max-w-md text-pretty">
+            Reservations are personal. Share your dates and we will respond
+            within the day with availability, pricing and a quiet welcome.
+          </p>
+
+          <form
+            data-reveal
+            onSubmit={(e) => { e.preventDefault(); window.open(whatsappLink(), "_blank"); }}
+            className="reveal mt-12 space-y-7 max-w-md"
+          >
+            <div>
+              <label className="eyebrow block mb-2">Your Name</label>
+              <input
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full bg-transparent border-b border-border focus:border-forest outline-none py-3 font-light text-foreground placeholder:text-stone transition-colors"
+                placeholder="As it should appear on the welcome note"
+              />
+            </div>
+            <div>
+              <label className="eyebrow block mb-2">Dates of Stay</label>
+              <input
+                value={form.dates}
+                onChange={(e) => setForm({ ...form, dates: e.target.value })}
+                className="w-full bg-transparent border-b border-border focus:border-forest outline-none py-3 font-light text-foreground placeholder:text-stone transition-colors"
+                placeholder="e.g. 12 — 15 June"
+              />
+            </div>
+            <div>
+              <label className="eyebrow block mb-2">Guests</label>
+              <input
+                type="number" min="1" max="20"
+                value={form.guests}
+                onChange={(e) => setForm({ ...form, guests: e.target.value })}
+                className="w-full bg-transparent border-b border-border focus:border-forest outline-none py-3 font-light text-foreground transition-colors"
+              />
+            </div>
+            <div>
+              <label className="eyebrow block mb-2">A Note</label>
+              <textarea
+                rows={3}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full bg-transparent border-b border-border focus:border-forest outline-none py-3 font-light text-foreground placeholder:text-stone transition-colors resize-none"
+                placeholder="Anything we should know about your stay"
+              />
+            </div>
+
+            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <button
+                type="submit"
+                className="group inline-flex items-center justify-center gap-3 bg-forest-deep text-cream px-8 py-4 text-xs uppercase tracking-[0.28em] font-light hover:bg-terracotta transition-colors duration-700"
+              >
+                Reserve via WhatsApp
+                <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+              </button>
+              <a
+                href="mailto:reservations@villavanresink.com"
+                className="inline-flex items-center justify-center text-xs uppercase tracking-[0.28em] font-light text-foreground/70 hover:text-forest transition-colors"
+              >
+                Or write to us
+              </a>
+            </div>
+          </form>
+        </div>
+
+        {/* Right side spacer that holds the image */}
+        <div className="hidden lg:block min-h-[700px]" />
+      </div>
+    </section>
+  );
+};

@@ -13,12 +13,39 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        cream: "hsl(var(--cream))",
+        "cream-soft": "hsl(var(--cream-soft))",
+        fog: "hsl(var(--fog))",
+        forest: {
+          DEFAULT: "hsl(var(--forest))",
+          deep: "hsl(var(--forest-deep))",
+        },
+        olive: "hsl(var(--olive))",
+        moss: "hsl(var(--moss))",
+        stone: {
+          DEFAULT: "hsl(var(--stone))",
+          light: "hsl(var(--stone-light))",
+        },
+        charcoal: "hsl(var(--charcoal))",
+        wood: {
+          DEFAULT: "hsl(var(--wood))",
+          light: "hsl(var(--wood-light))",
+        },
+        terracotta: {
+          DEFAULT: "hsl(var(--terracotta))",
+          soft: "hsl(var(--terracotta-soft))",
+        },
+        gold: "hsl(var(--gold))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
