@@ -34,32 +34,32 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-24 px-6 lg:px-16">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-[clamp(4rem,10vh,7rem)] fluid-gutter-x">
         <div className="max-w-5xl">
-          <p className="eyebrow !text-cream/80 mb-6 reveal in" style={{ animationDelay: "0.4s" }}>
+          <p className="eyebrow !text-cream/80 mb-4 sm:mb-6 reveal in" style={{ animationDelay: "0.4s" }}>
             A Colonial Heritage Retreat
           </p>
-          <h1 className="font-display text-cream text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.95] tracking-tight text-balance">
+          <h1 className="font-display text-cream fluid-display-xl tracking-tight text-balance">
             A Timeless Retreat
             <br />
             <em className="font-light italic">Beneath Merapi</em>
           </h1>
-          <p className="mt-8 max-w-xl text-cream/85 text-base md:text-lg font-light leading-relaxed text-pretty">
+          <p className="mt-6 sm:mt-8 max-w-xl text-cream/85 fluid-body-lg font-light text-pretty">
             Where colonial heritage, mountain mist, and tropical silence
             create an unforgettable escape.
           </p>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-6">
             <a
               href="#booking"
-              className="group inline-flex items-center justify-center gap-3 bg-cream text-charcoal px-8 py-4 text-xs uppercase tracking-[0.28em] font-light hover:bg-terracotta hover:text-cream transition-all duration-700"
+              className="group inline-flex items-center justify-center gap-3 bg-cream text-charcoal px-7 sm:px-8 py-4 text-[0.7rem] sm:text-xs uppercase tracking-[0.28em] font-light hover:bg-terracotta hover:text-cream transition-all duration-700"
             >
               Book Your Stay
               <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#story"
-              className="group inline-flex items-center justify-center gap-3 border border-cream/60 text-cream px-8 py-4 text-xs uppercase tracking-[0.28em] font-light hover:bg-cream/10 transition-all duration-700"
+              className="group inline-flex items-center justify-center gap-3 border border-cream/60 text-cream px-7 sm:px-8 py-4 text-[0.7rem] sm:text-xs uppercase tracking-[0.28em] font-light hover:bg-cream/10 transition-all duration-700"
             >
               Explore The Villa
             </a>

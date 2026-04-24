@@ -1,11 +1,11 @@
 export const Footer = () => {
   return (
-    <footer className="relative bg-forest-deep text-cream pt-24 pb-10 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-16">
-        <div className="grid lg:grid-cols-12 gap-12 pb-16 border-b border-cream/15">
-          <div className="lg:col-span-5">
+    <footer className="relative bg-forest-deep text-cream pt-20 md:pt-24 pb-10 overflow-hidden">
+      <div className="container mx-auto fluid-gutter-x">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 pb-12 md:pb-16 border-b border-cream/15">
+          <div className="sm:col-span-2 lg:col-span-5">
             <p className="font-display italic text-terracotta-soft mb-4">Est. 1928</p>
-            <h3 className="font-display text-5xl md:text-6xl leading-[1.02] mb-6">
+            <h3 className="font-display fluid-display-md mb-5 md:mb-6">
               Villa Van Resink
             </h3>
             <p className="text-cream/65 font-light max-w-md leading-relaxed">
@@ -15,7 +15,7 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-3">
-            <p className="eyebrow !text-cream/60 mb-5">Visit</p>
+            <p className="eyebrow !text-cream/60 mb-4 md:mb-5">Visit</p>
             <p className="font-light leading-relaxed text-cream/85">
               Jl. Astomulyo, Kaliurang<br />
               Sleman, Yogyakarta<br />
@@ -24,16 +24,16 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <p className="eyebrow !text-cream/60 mb-5">Contact</p>
+            <p className="eyebrow !text-cream/60 mb-4 md:mb-5">Contact</p>
             <ul className="space-y-2 font-light text-cream/85">
               <li><a href="https://wa.me/6281234567890" className="hover:text-terracotta-soft transition-colors">WhatsApp</a></li>
-              <li><a href="mailto:reservations@villavanresink.com" className="hover:text-terracotta-soft transition-colors">Email</a></li>
+              <li><a href="mailto:reservations@villavanresink.com" className="hover:text-terracotta-soft transition-colors break-all">Email</a></li>
               <li><a href="tel:+6281234567890" className="hover:text-terracotta-soft transition-colors">+62 812 3456 7890</a></li>
             </ul>
           </div>
 
           <div className="lg:col-span-2">
-            <p className="eyebrow !text-cream/60 mb-5">Follow</p>
+            <p className="eyebrow !text-cream/60 mb-4 md:mb-5">Follow</p>
             <ul className="space-y-2 font-light text-cream/85">
               <li><a href="#" className="hover:text-terracotta-soft transition-colors">Instagram</a></li>
               <li><a href="#" className="hover:text-terracotta-soft transition-colors">Pinterest</a></li>
@@ -43,8 +43,8 @@ export const Footer = () => {
         </div>
 
         {/* Big editorial wordmark */}
-        <div className="py-16 overflow-hidden">
-          <p className="font-display italic text-cream/10 text-[18vw] leading-none whitespace-nowrap text-center select-none">
+        <div className="py-12 md:py-16 overflow-hidden">
+          <p className="font-display italic text-cream/10 text-[22vw] md:text-[18vw] leading-none whitespace-nowrap text-center select-none">
             Van Resink
           </p>
         </div>
