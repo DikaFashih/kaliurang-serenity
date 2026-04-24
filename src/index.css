@@ -161,6 +161,16 @@
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 
+  /* Fluid typography — scales smoothly across all devices */
+  .fluid-display-xl  { font-size: clamp(2.5rem, 9vw, 8rem); line-height: 0.96; letter-spacing: -0.015em; }
+  .fluid-display-lg  { font-size: clamp(2.25rem, 6.4vw, 5.25rem); line-height: 1.02; }
+  .fluid-display-md  { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.04; }
+  .fluid-h3          { font-size: clamp(1.35rem, 2.4vw, 1.875rem); line-height: 1.18; }
+  .fluid-body        { font-size: clamp(0.98rem, 1.05vw, 1.125rem); line-height: 1.75; }
+  .fluid-body-lg     { font-size: clamp(1rem, 1.2vw, 1.2rem); line-height: 1.8; }
+  .fluid-section-y   { padding-top: clamp(4rem, 9vw, 10rem); padding-bottom: clamp(4rem, 9vw, 10rem); }
+  .fluid-gutter-x    { padding-left: clamp(1.25rem, 4vw, 4rem); padding-right: clamp(1.25rem, 4vw, 4rem); }
+
   @keyframes drift-fog {
     0%, 100% { transform: translateX(-2%) translateY(0); opacity: 0.4; }
     50% { transform: translateX(2%) translateY(-1%); opacity: 0.65; }
